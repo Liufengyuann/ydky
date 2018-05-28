@@ -8,12 +8,18 @@ import '../src/assets/css/elementuiReset.css'
 import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import vuex from 'vuex'
 // import './element-variables.scss'
 
 Vue.use(VueResource)
 Vue.use(App)
 Vue.use(ElementUI)
+Vue.use(vuex)
 Vue.config.productionTip = false
+// Vue.http.interceptors.push((request, next) => {
+//   request.credentials = true;
+//   next();
+// });
 
 /* eslint-disable no-new */
 // new Vue({
@@ -23,7 +29,13 @@ Vue.config.productionTip = false
 //   template: '<App/>'
 // })
 router.push({ path: 'index' })
+var store = new vuex.Store({
+	state: {
+		showLogin : true
+	}
+})
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

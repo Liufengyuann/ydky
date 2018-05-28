@@ -6,3 +6,13 @@
 .el-checkbox__input.is-checked+.el-checkbox__label{
 	color: #000;
 }
+.el-form-item{
+	margin-bottom: 10px;
+}
+.el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus{
+	border-color: #eee;
+}
+.el-form-item__error{
+	padding-top: 0;
+	top: 83%;
+}

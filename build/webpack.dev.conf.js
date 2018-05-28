@@ -58,24 +58,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks: ['app']
     }),
-    new HtmlWebpackPlugin({
-      filename: 'blog.html',
-      template: 'blog.html',
-      inject: true,
-      chunks: ['blog']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'interlocution.html',
-      template: 'interlocution.html',
-      inject: true,
-      chunks: ['interlocution']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'openProject.html',
-      template: 'openProject.html',
-      inject: true,
-      chunks: ['openProject']
-    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {

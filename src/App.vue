@@ -9,7 +9,7 @@
           <h1>云顶开源社区</h1>
         </div>
         <div class="header-right" >
-          <p class="border-right"><a>注册</a></p>
+          <p class="border-right" v-if = "showNav"><router-link to='/register'>注册</router-link></p>
           <p v-if = "showNav"><router-link to='/login'>登录</router-link></p>
           <p v-if ="!showNav"><router-link to='/index'>首页</router-link></p>
           <p><a>邮箱</a></p>
@@ -23,10 +23,10 @@
           <router-link to="/index">首页</router-link>
         </li>
         <li>
-          <a href="openProject.html">开源项目</a>
+          <a href="">开源项目</a>
         </li>
         <li>
-          <a href="interlocution.html">问答</a>
+          <a href="">问答</a>
         </li>
         <li>
           <router-link to="/blog">博客</router-link>
@@ -89,7 +89,8 @@ export default {
   },
   data () {
     return {
-      showNav: true
+      showNav: true,
+      showLogin: true
     }
   },
   created () {
@@ -97,10 +98,15 @@ export default {
   watch: {
     '$route' (to, from) {
       let toPath = to.path.split('/')
+      console.log(to.path)
       if(toPath[1]=='login') {
         this.showNav = false
-      } else if (toPath[1]=='index') {
+      } else if (toPath[1] == 'index') {
         this.showNav = true
+        this.$store.state.showLogin = true
+      } else if (toPath[1] == 'register') {
+        this.showNav = false
+        this.$store.state.showLogin = false
       }
     }
   }

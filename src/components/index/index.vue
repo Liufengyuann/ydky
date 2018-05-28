@@ -64,18 +64,18 @@ import interTab from '../interTab/interTab.vue'
 			}
 		},
 		created () {
-			this.$http.get('http://localhost:3000/openPro').then(response => {
-				response = response.body
-				this.openPro = response.data
-			})
-			this.$http.get('http://localhost:3000/blog').then(response => {
-				response = response.body
-				this.updateLog = response.data
-			})
-			this.$http.get('http://localhost:3000/interlocution').then(response => {
-				response = response.body
-				this.interLoct = response.data
-			})
+			// this.$http.get('http://localhost:3000/openPro').then(response => {
+			// 	response = response.body
+			// 	this.openPro = response.data
+			// })
+			// this.$http.get('http://localhost:3000/blog').then(response => {
+			// 	response = response.body
+			// 	this.updateLog = response.data
+			// })
+			// this.$http.get('http://localhost:3000/interlocution').then(response => {
+			// 	response = response.body
+			// 	this.interLoct = response.data
+			// })
 		},
 		methods: {
 			setStyle: function (lastobj,thisobj,item) {
